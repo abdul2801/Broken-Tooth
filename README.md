@@ -98,7 +98,6 @@ Now, **play the `output1.wav` file** to hear what **Blackbeard was jamming to!**
 🎧 **Click the link below to listen to the recovered audio:**  
 [Listen to the audio](/output/output.wav)
 
-converted to mp4 to play on github
 https://github.com/user-attachments/assets/25c1bb4d-6b1c-40f5-a82c-6b991174cb9b
 
 ### **Final Thought:**  
