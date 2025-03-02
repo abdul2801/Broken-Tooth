@@ -76,6 +76,9 @@ end
 
 ---
 
+
+
+
 ### **Step 3: Convert SBC to WAV**  
 To convert the **SBC** file to a **WAV** file, use the following command in a terminal:  
 ```bash
@@ -93,7 +96,10 @@ Now, **play the `output1.wav` file** to hear what **Blackbeard was jamming to!**
 
 ### **Step 4: Listen to the Extracted Audio**  
 🎧 **Click the link below to listen to the recovered audio:**  
-[Listen to the audio](/output/output.wav)  
+[Listen to the audio](/output/output.wav)
+
+converted to mp4 to play on github
+https://github.com/user-attachments/assets/25c1bb4d-6b1c-40f5-a82c-6b991174cb9b
 
 ### **Final Thought:**  
 Blud was secretly vibing to **Billie Eilish**... 🤨💀  
