@@ -1,0 +1,26 @@
+ffmpeg -f sbc -i output.sbc -ar 44100 -ac 2 output1.wav
+
+-- Define output binary file local filename = "output.bin" local file = assert(io.open(filename, "wb")) -- Open in binary write mode
+
+-- Create a tap listener for SBC packets local tap = Listener.new("frame", "sbc")
+
+function tap.packet(pinfo, tvb) -- Get the entire raw packet local raw_data = tvb:bytes():raw()
+
+-- Ensure the packet is at least 22 bytes long
+if #raw_data > 22 then
+    -- Remove the first 22 bytes
+    local trimmed_data = raw_data:sub(23)  -- Lua uses 1-based indexing
+
+    -- Write trimmed data to binary file
+    file:write(trimmed_data)
+    file:flush()  -- Ensure data is written immediately
+
+    print("Packet " .. pinfo.number .. ": Written " .. #trimmed_data .. " bytes to " .. filename)
+else
+    print("Packet " .. pinfo.number .. ": Packet too short (<22 bytes), skipped")
+end
+end
+
+function tap.reset() print("Processing reset") end
+
+-- Ensure the file is closed when Wireshark is done function tap.close() file:close() print("Capture complete. Saved to " .. filename) end
